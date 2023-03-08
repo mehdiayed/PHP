@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\style2.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            margin: 2%;
+        }
+
+        form {
+            width: 60%;
+        }
+
+        nav {
+            background-image: linear-gradient(45deg, #ff9671, #ffc756, #f9f871);
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <h1>DAILY NEWS - ARTICLES </h1>
+    </nav>
+    <br>
+    <center>
+        <form action="../model/ajout_article_action.php" method="post">
+            <fieldset>
+                <legend>
+                    <h2>AJOUTER UN ARTICLE</h2>
+                </legend>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>titre</th>
+                        <th><input type="text" name="titre" placeholder="le titre de larticle"></th>
+                    </tr>
+                    <tr>
+                        <th>categorie</th>
+                        <th>
+                            <select name="cathegorie">
+                                <option value="-sans categorie-">-sans categorie-</option>
+                                <option value="film">film</option>
+                                <option value="education">education</option>
+                                <option value="loisir">loisir</option>
+                                <option value="historique">historique</option>
+                                <option value="politic">politique</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th> taper ici votre article </th>
+                        <th><textarea name="txt" type="text" id="" cols="40" rows="5"></textarea></th>
+                    </tr>
+                    <tr>
+                        <th>nom | pseudo de l'ecrivain </th>
+                        <th><input type="text" name="nom" placeholder="votre nom | pseudo ?"></th>
+                    </tr>
+                    <tr>
+                        <th>date</th>
+                        <th><input type="date" name="date"></th>
+                    </tr>
+                </table>
+            </fieldset>
+            <center><input type="submit" name="ok" value="AJOUTER !">  <br>
+                <a href="../home.html">home</a>
+            </center>
+        </form>
+    </center>
+</body>
+
+</html>

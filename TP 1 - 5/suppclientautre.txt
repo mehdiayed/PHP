@@ -1,0 +1,36 @@
+<form action="supp.php" method="post">
+        <center>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th> identifiant</th>
+                    <th> numero cin </th>
+                    <th> nom</th>
+                    <th> prenom</th>
+                    <th> telephone</th>
+                </tr>
+
+
+                <?php
+                require_once("client.php");
+                $c = new Client();
+                $res = $c->liste();
+                $l = $res->fetchAll();
+
+                foreach ($l as $ligne) {
+                ?>
+                    <tr>
+                        <td><input type="radio" name="radio" value="$l"></td>
+                        <td><?php echo $ligne[0]; ?></td>
+                        <td><?php echo $ligne[1]; ?></td>
+                        <td><?php echo $ligne[2]; ?></td>
+                        <td><?php echo $ligne[3]; ?></td>
+                        <td><?php echo $ligne[4]; ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
+        </center><br>
+        <center><input type="submit" name="supp" value="supprimer"></center>
+    </form>
